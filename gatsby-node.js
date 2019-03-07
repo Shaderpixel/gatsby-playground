@@ -1,4 +1,4 @@
-const path = require('path');
+import path from 'path';
 
 const createTagPages = (createPage, nodes) => {
   const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js');
@@ -41,7 +41,7 @@ const createTagPages = (createPage, nodes) => {
   });
 };
 
-exports.createPages = async ({ graphql, actions, ...stuff }) => {
+export const createPages = async ({ graphql, actions, ...stuff }) => {
   // get the createPage API
   const { createPage } = actions;
   const blogPostTemplate = path.resolve('./src/templates/blogPost.js');
